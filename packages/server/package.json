@@ -1,0 +1,21 @@
+{
+  "name": "@internal/server",
+  "version": "1.0.0",
+  "main": "./src/index.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.mjs",
+    "start": "node src/index.mjs",
+    "build": "mkdir -p dist && cp -r src/* dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify-multitenant-getting-started": "*",
+    "find-up": "^7.0.0",
+    "import-meta-resolve": "^4.1.0",
+    "package-directory": "^8.1.0"
+  }
+}

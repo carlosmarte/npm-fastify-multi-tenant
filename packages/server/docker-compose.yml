@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  fastify-multitenant:
+    build: .
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+      - MAX_TENANTS=100
+    volumes:
+      - ./tenants:/app/tenants:ro
+      - ./plugins:/app/plugins:ro
