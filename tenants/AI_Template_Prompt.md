@@ -647,3 +647,42 @@ Your tenant is ready when:
 - [ ] Required features work as expected
 - [ ] Testing completed successfully
 - [ ] Documentation updated
+
+Generate files for tenant based on structure below - but keep it simple with no external packages or services.
+
+```
+├── config.js # Main tenant configuration
+├── index.mjs # Optional custom tenant ID definition
+├── routes/ # API endpoints and route handlers
+│ ├── index.mjs # Main tenant routes
+│ ├── users.mjs # User management routes
+│ └── ... # Feature-specific routes
+├── schemas/ # JSON schema definitions
+│ ├── user.mjs # User-related schemas
+│ └── ... # Feature-specific schemas
+├── services/ # Business logic implementation
+│ ├── userService.mjs # User management service
+│ └── ... # Feature-specific services
+├── plugins/ # Tenant-specific plugins
+│ ├── analytics/ # Example analytics plugin
+│ │ └── index.mjs # Plugin entry point
+│ └── ... # Other tenant plugins
+├── middleware/ # Custom middleware
+│ └── tenantSpecificAuth.mjs # Tenant-specific authentication
+├── models/ # Data models (optional)
+│ └── user.mjs # User model definition
+├── database/ # Database-related files
+│ ├── migrations/ # Schema migrations
+│ │ └── 001_initial_schema.sql # Initial database schema
+│ └── seeds/ # Seed data
+│ └── sample_data.sql # Sample data for development
+├── lib/ # Helper utilities
+│ └── validators.mjs # Custom validation helpers
+├── hooks/ # Custom Fastify hooks
+│ └── auditLogger.mjs # Example audit logging hook
+└── test/ # Tests for this tenant
+├── routes/ # Route tests
+│ └── users.test.mjs # User routes tests
+└── services/ # Service tests
+└── userService.test.mjs # User service tests
+```
